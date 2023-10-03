@@ -6,7 +6,7 @@ const Body = () => {
   const [invoiceData, setInvoiceData] = useState();
 
   const saveInvoiceData = (data) => {
-    // console.log(data);
+    // console.log(`${data} consoled`);
     setInvoiceData(data);
   };
 
