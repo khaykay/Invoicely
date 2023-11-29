@@ -7,11 +7,12 @@ import GridColumn from "./Layouts/GridColumn";
 
 const Preview = ({ invoiceData }) => {
   return (
-    <div className="md:flex md:justify-center">
-      <div className="bg-[#F9FAFF] py-6 px-8 text-xs md:text-[10px] md:px-6 md:w-[70%] sm:w-full">
+    <div className="md:flex md:justify-center ">
+      <div className="bg-[#F9FAFF]  py-6 px-8 text-xs md:text-[10px] md:px-6 md:w-[70%] sm:w-full ">
         <div className="">
           <h3 className="">Preview</h3>
         </div>
+
         {/* <Default invoiceData={invoiceData} /> */}
         {/* <GridRow invoiceData={invoiceData} /> */}
         <GridColumn invoiceData={invoiceData} />
