@@ -12,7 +12,7 @@ const Body = () => {
 
   return (
     <>
-      <div className=" grid grid-cols-[1.2fr_1fr] md:flex md:flex-col md:gap-7 sm:m-5">
+      <div className=" grid grid-cols-[1.2fr_1fr] ml-[6rem] md:flex md:flex-col md:gap-7 sm:m-5">
         <Form saveInvoiceData={saveInvoiceData} />
         <Preview invoiceData={invoiceData} />
       </div>
