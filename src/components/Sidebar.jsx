@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SidebarModal from "./Modals/SidebarModal";
-import Layout from "./SelectedIcon/Layout";
+import Layout from "./IconComponents/Layout";
 
 const Sidebar = () => {
   const [selectedIcon, setSelectedIcon] = useState(null);
