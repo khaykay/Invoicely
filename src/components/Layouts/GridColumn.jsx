@@ -96,7 +96,7 @@ const GridColumn = ({ invoiceData }) => {
         <div className=" basis-1/3 flex flex-col">
           {" "}
           <div className="flex basis-1/5 bg-white relative justify-center items-center  before:content-[''] before:bg-[#dddddd] before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-bl-xl">
-            <div className="h-12 flex bg-black items-center md:h-6">
+            <div className="h-12 flex bg-black items-center md:h-6 z-10">
               <img
                 src={invoiceData?.logo}
                 alt=""
@@ -110,18 +110,22 @@ const GridColumn = ({ invoiceData }) => {
               <span className="bg-white w-[50%] h-full rounded-full"></span>
             </span>
           </div>
-          <div className=" flex   py-[0.65rem] md:py-[0.35rem] rounded-tl-lg bg-white flex-1 relative before:content-[''] before:bg-[#dddddd] before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-tl-xl">
-            <div className="flex flex-col basis-[35%]">
-              <span className="text-[9px] font-bold md:text-[7.5px]">
-                Bill From:
-              </span>
-              <p>{invoiceData?.companyDetails} </p>
-            </div>
-            <div className="flex flex-col  basis-[35%] pl-3">
-              <span className="text-[9px] font-bold md:text-[7.5px]">
-                Bill To:
-              </span>
-              <p>{invoiceData?.bill}</p>
+          <div className=" flex   py-[1rem]  rounded-tl-lg bg-white flex-1 relative before:content-[''] before:bg-[#dddddd] before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-tl-xl">
+            <div className="z-10 flex flex-col px-4 gap-y-3 w-full">
+              <div className="flex flex-col ">
+                <span className="text-[9px] font-bold md:text-[7.5px]">
+                  Bill From:
+                </span>
+                <p className="break-words w-[140px]">
+                  {invoiceData?.companyDetails}{" "}
+                </p>
+              </div>
+              <div className="flex flex-col ">
+                <span className="text-[9px] font-bold md:text-[7.5px]">
+                  Bill To:
+                </span>
+                <p className="break-words w-[140px]">{invoiceData?.bill}</p>
+              </div>
             </div>
           </div>
         </div>
