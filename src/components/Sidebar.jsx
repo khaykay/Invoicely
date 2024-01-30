@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SidebarModal from "./Modals/SidebarModal";
 import Layout from "./IconComponents/Layout";
+import Color from "./IconComponents/Color";
 
 const Sidebar = () => {
   const [selectedIcon, setSelectedIcon] = useState(null);
@@ -14,7 +15,7 @@ const Sidebar = () => {
   };
   return (
     <>
-      <div className="inset-0 fixed mx-0 my-auto w-[80px] h-max  ">
+      <div className="inset-0 fixed mx-0 my-auto w-[80px] h-max ">
         <div className="   relative flex flex-col p-7 justify-around gap-5 h-max items-center bg-[#2764F6] md:px-1  rounded-r-[45px] ">
           <span
             className="flex flex-col items-center "
@@ -203,7 +204,7 @@ const Sidebar = () => {
       >
         {selectedIcon === "Template" && <p>Template Content Goes Here</p>}
         {selectedIcon === "Layout" && <Layout />}
-        {selectedIcon === "Color" && <p>Color Content Goes Here</p>}
+        {selectedIcon === "Color" && <Color />}
         {selectedIcon === "Background" && <p>Background Content Goes Here</p>}
       </SidebarModal>
     </>
