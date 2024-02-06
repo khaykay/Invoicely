@@ -11,19 +11,19 @@ const Layout = () => {
         <h5 className="mb-3 text-xs  ">Suggested</h5>
         <div className="  flex flex-wrap gap-y-4  gap-x-4  justify-center">
           <span className="">
-            <img src={page} alt="" className="h-[5.5rem] w-20 " />
+            <img src={page} alt="" className="h-[5rem] w-[4.5rem] " />
           </span>
           <span className="">
-            <img src={gridrow} alt="" className="h-[5.5rem] w-20 " />
+            <img src={gridrow} alt="" className="h-[5rem] w-[4.5rem]" />
           </span>
           <span className="">
-            <img src={gridcolumn} alt="" className="h-[5.5rem] w-20  " />
+            <img src={gridcolumn} alt="" className="h-[5rem] w-[4.5rem]  " />
           </span>
           <span className="">
-            <img src={doubly} alt="" className="h-[5.5rem] w-20 " />
+            <img src={doubly} alt="" className="h-[5rem] w-[4.5rem] " />
           </span>
           <span className="">
-            <img src={triply} alt="" className="h-[5.5rem] w-20 " />
+            <img src={triply} alt="" className="h-[5rem] w-[4.5rem] " />
           </span>
         </div>
       </div>

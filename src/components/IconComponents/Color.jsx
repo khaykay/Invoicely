@@ -16,7 +16,7 @@ const Color = () => {
     setColorPickerVisible(true);
     setRecentlyUsedColors((prevColors) => [...prevColors, color]);
   };
-  console.log(selectedColor + "it happened 2");
+  // console.log(selectedColor + "it happened 2");
   console.log(recentlyUsedColors);
   return (
     <>
@@ -47,9 +47,15 @@ const Color = () => {
       </div>
 
       <div className="">
-        <span className="">recently used {selectedColor}</span>
-
-        <div className=""></div>
+        <h5 className="mb-3 text-xs  ">Recently used color</h5>
+        {/* <span className=""></span> */}
+        <div className="">
+          {recentlyUsedColors.map((color, index) => (
+            <span className={`h-12 w-12 rounded-full bg-${color}`} key={index}>
+              recently used {color}
+            </span>
+          ))}
+        </div>
       </div>
     </>
   );
