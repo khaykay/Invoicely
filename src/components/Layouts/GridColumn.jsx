@@ -95,7 +95,7 @@ const GridColumn = ({ invoiceData }) => {
         {/* left side */}
         <div className=" basis-1/3 flex flex-col">
           {" "}
-          <div className="flex basis-1/5 bg-white relative justify-center items-center  before:content-[''] before:bg-[#dddddd] before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-bl-xl">
+          <div className="flex basis-1/5  relative justify-center items-center  before:content-[''] before:bg-[#dddddd] before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-bl-xl">
             <div className="h-12 flex bg-black items-center md:h-6 z-10">
               <img
                 src={invoiceData?.logo}
@@ -110,7 +110,7 @@ const GridColumn = ({ invoiceData }) => {
               <span className="bg-white w-[50%] h-full rounded-full"></span>
             </span>
           </div>
-          <div className=" flex   py-[1rem]  rounded-tl-lg bg-white flex-1 relative before:content-[''] before:bg-[#dddddd] before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-tl-xl">
+          <div className=" flex   py-[1rem]  rounded-tl-lg  flex-1 relative before:content-[''] before:bg-[#dddddd] before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-tl-xl">
             <div className="z-10 flex flex-col px-4 gap-y-3 w-full">
               <div className="flex flex-col ">
                 <span className="text-[9px] font-bold md:text-[7.5px]">
