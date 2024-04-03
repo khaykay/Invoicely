@@ -1,8 +1,10 @@
 import React from "react";
 import logo from "/logo.svg";
 import { Page, Text, View, Document, Image } from "@react-pdf/renderer";
+import { useSelector } from "react-redux";
 
 const PDFFile = ({ invoiceData }) => {
+  // const selectedColor = useSelector((state) => state.bgColorReducer.color);
   return (
     <>
       <Document>
@@ -210,7 +212,7 @@ const PDFFile = ({ invoiceData }) => {
               </View>
               <View className=" ">
                 <View
-                  className="bg-[#2764F6] flex px-2 py-[0.65rem] rounded-t-md "
+                  className="flex px-2 py-[0.65rem] rounded-t-md "
                   style={{
                     display: "flex",
                     flexDirection: "row",
@@ -220,7 +222,8 @@ const PDFFile = ({ invoiceData }) => {
                     paddingBottom: "10.4",
                     borderTopLeftRadius: "6",
                     borderTopRightRadius: "6",
-                    backgroundColor: "rgb(39 100 246)",
+                    backgroundColor: `#2764F6`,
+                    // backgroundColor: `${selectedColor}`,
                   }}
                 >
                   <Text

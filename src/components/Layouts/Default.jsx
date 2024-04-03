@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Default = ({ invoiceData }) => {
+  const selectedColor = useSelector((state) => state.bgColorReducer.color);
   return (
     <div className=" min-h-[85%] bg-white shadow p-7 md:p-4 ">
       <div className="  h-full ">
@@ -52,7 +54,13 @@ const Default = ({ invoiceData }) => {
           </div>
         </div>
         <div className=" ">
-          <div className="bg-[#2764F6] flex px-2 py-[0.65rem] rounded-t-md md:px-1 md:py-[0.5rem] md:gap-1">
+          <div
+            className=" flex px-2 py-[0.65rem] rounded-t-md md:px-1 md:py-[0.5rem] md:gap-1"
+            style={{
+              backgroundColor: `${selectedColor}`,
+              color: selectedColor === "#000000" ? "#f5f5f5" : "black",
+            }}
+          >
             <span className="basis-[50%]">Item</span>
             <span className="basis-[16.5%]">Rate</span>
             <span className="basis-[16.5%]">Quantity</span>

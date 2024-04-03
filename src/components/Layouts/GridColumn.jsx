@@ -1,6 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import styled from "styled-components";
 
 const GridColumn = ({ invoiceData }) => {
+  const selectedColor = useSelector((state) => state.bgColorReducer.color);
+  const BeforeElement = styled.div`
+    &::before {
+      background-color: ${selectedColor}; /* Set the background color */
+    }
+  `;
+
   return (
     <div className=" min-h-[500px] h-full box-border flex bg-white shadow p-4 md:p-4 ">
       <div className="  flex-1 flex  ">
@@ -72,7 +81,10 @@ const GridColumn = ({ invoiceData }) => {
               </div>
             </div>
           </div>
-          <div className="flex justify-end py-1 bg-[#dddddd] rounded-l-2xl">
+          <div
+            className="flex justify-end py-1  rounded-l-2xl"
+            style={{ backgroundColor: `${selectedColor}` }}
+          >
             <div className="flex justify-between basis-[45%] pr-4 items-center ">
               <span className="font-semibold text-[11px] md:text-[9px] ">
                 Total
@@ -93,9 +105,16 @@ const GridColumn = ({ invoiceData }) => {
           </div>
         </div>
         {/* left side */}
-        <div className=" basis-1/3 flex flex-col">
+        <div
+          className=" basis-1/3 flex flex-col"
+          style={{
+            color: selectedColor === "#000000" ? "#f5f5f5" : "black",
+            border: selectedColor === "#FFFFFF" ? "1px solid #E5E8EB" : "none",
+            borderRadius: selectedColor === "#FFFFFF" ? "10px" : "none",
+          }}
+        >
           {" "}
-          <div className="flex basis-1/5  relative justify-center items-center  before:content-[''] before:bg-[#dddddd] before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-bl-xl">
+          <BeforeElement className="flex basis-1/5  relative justify-center items-center  before:content-['']  before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-bl-xl">
             <div className="h-12 flex bg-black items-center md:h-6 z-10">
               <img
                 src={invoiceData?.logo}
@@ -103,14 +122,17 @@ const GridColumn = ({ invoiceData }) => {
                 className="h-full md:h-full"
               />
             </div>
-          </div>{" "}
-          <div className=" h-9 flex bg-[#dddddd]">
+          </BeforeElement>{" "}
+          <div
+            className=" h-9 flex bg-[#dddddd]"
+            style={{ backgroundColor: `${selectedColor}` }}
+          >
             <span className="flex-1 bg-white rounded-r-3xl"></span>
             <span className=" flex-1 flex justify-center ">
               <span className="bg-white w-[50%] h-full rounded-full"></span>
             </span>
           </div>
-          <div className=" flex   py-[1rem]  rounded-tl-lg  flex-1 relative before:content-[''] before:bg-[#dddddd] before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-tl-xl">
+          <BeforeElement className=" flex   py-[1rem]  rounded-tl-lg  flex-1 relative before:content-[''] before:bg-[#dddddd] before:w-full before:h-full before:absolute before:bottom-0 before:left-0 before:rounded-tl-xl">
             <div className="z-10 flex flex-col px-4 gap-y-3 w-full">
               <div className="flex flex-col ">
                 <span className="text-[9px] font-bold md:text-[7.5px]">
@@ -127,7 +149,7 @@ const GridColumn = ({ invoiceData }) => {
                 <p className="break-words w-[140px]">{invoiceData?.bill}</p>
               </div>
             </div>
-          </div>
+          </BeforeElement>
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+//test
 
 const Form = ({ saveInvoiceData }) => {
+  const [counter, setCounter] = useState(0);
   //handle change.
   const [inputChanged, setInputChanged] = useState(false);
   const [invoiceDetails, setInvoiceDetails] = useState({
@@ -219,7 +221,6 @@ const Form = ({ saveInvoiceData }) => {
               className="form-input text-xs rounded-lg border-solid "
             />
           </span>
-
           <div className="py-2 px-3 flex flex-col  col-span-2 bg-[#F3F2F3] rounded-lg md:px-5 md:py-4 sm:px-3 sm:py-2">
             <span className="flex mb-2">
               <span className="basis-[45%] text-xs pl-1 sm:p-0  text-slate-500">
@@ -364,7 +365,6 @@ const Form = ({ saveInvoiceData }) => {
               </span>
             </div>
           </div>
-
           <div className="basis-[50%]">
             <span className="pt-2 flex gap-y-2 flex-col">
               <label className="text-xs text-slate-500">
@@ -426,6 +426,14 @@ const Form = ({ saveInvoiceData }) => {
               </span>
             </span>
           </div>
+
+          {/* <div className="">counter: {counter} </div>
+          <span
+            className="block h-7 w-7 bg-slate-500"
+            onClick={() => setCounter((i) => i + 1)}
+          >
+            click me
+          </span> */}
         </form>
       </div>
     </div>

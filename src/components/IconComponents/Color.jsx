@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import { IoAddCircleOutline } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
+import { setBgColor } from "../../Redux/bgColorSlice";
 
 const Color = () => {
-  const [selectedColor, setSelectedColor] = useState("#000000");
+  const dispatch = useDispatch();
+  const recentlyUsedColors = useSelector(
+    (state) => state.bgColorReducer.recentlyUsedColor
+  );
+  const selectedColor = useSelector((state) => state.bgColorReducer.color);
   const [isColorPickerVisible, setColorPickerVisible] = useState(false);
-  const [recentlyUsedColors, setRecentlyUsedColors] = useState([selectedColor]);
-  if (recentlyUsedColors.length == 8) {
-    recentlyUsedColors.shift();
-  }
 
   const handleColorChange = (event) => {
     const color = event.target.value;
-    setSelectedColor(color);
     setColorPickerVisible(true);
-    setRecentlyUsedColors((prevColors) => [...prevColors, color]);
-    // console.log(selectedColor);
+    dispatch(setBgColor(color));
   };
 
+  const handleBgColor = (color) => {
+    dispatch(setBgColor(color));
+  };
   const defaultWebColors = [
     "#000000", // Black
     "#C0C0C0", // Silver
@@ -70,9 +73,10 @@ const Color = () => {
         <div className="flex gap-2 flex-wrap">
           {recentlyUsedColors?.map((color, index) => (
             <span
-              className={`h-10 w-10 rounded-full inline-block`}
+              className={`h-10 w-10 rounded-full inline-block border border-solid border-gray-200`}
               key={index}
               style={{ background: `${color}` }}
+              onClick={() => handleBgColor(`${color}`)}
             ></span>
           ))}
         </div>
@@ -86,6 +90,7 @@ const Color = () => {
               className={`h-10 w-[5.5rem] rounded inline-block border border-solid border-gray-200`}
               key={index}
               style={{ background: `${color}` }}
+              onClick={() => handleBgColor(`${color}`)}
             ></span>
           ))}
         </div>

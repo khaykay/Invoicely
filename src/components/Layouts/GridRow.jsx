@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const GridRow = ({ invoiceData }) => {
+  const selectedColor = useSelector((state) => state.bgColorReducer.color);
   return (
     <div className=" min-h-[85%] bg-white shadow  ">
       <div className="  h-full ">
@@ -95,7 +97,12 @@ const GridRow = ({ invoiceData }) => {
             <p className="text-[10px] italic block">{invoiceData?.note}</p>
           </div>
         </div>
-        <div className="bg-[#2764F6] flex  px-7 py-4 md:p-4 text-[#fbfbfc]">
+        <div
+          className=" flex  px-7 py-4 md:p-4 text-[#fbfbfc]"
+          style={{
+            backgroundColor: `${selectedColor}`,
+          }}
+        >
           <div className="basis-1/2">
             <div className="flex flex-col  ">
               <div className="text-[10px] ">Invoice Details</div>
