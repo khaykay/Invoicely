@@ -145,7 +145,7 @@ const Form = ({ saveInvoiceData }) => {
   };
 
   return (
-    <div className="md:flex md:justify-center">
+    <div className="">
       <div className="p-6 ">
         <form className="grid grid-cols-2  gap-2">
           <span className="flex flex-col pb-2">
@@ -162,9 +162,7 @@ const Form = ({ saveInvoiceData }) => {
                 file:text-xs file:font-semibold
                 file:bg-violet-50 file:text-violet-700
                 hover:file:bg-violet-100
-                md:file:text-[10px]
-                md:file:mr-1
-                md:file:px-2 
+              
               "
             />
           </span>
@@ -221,23 +219,23 @@ const Form = ({ saveInvoiceData }) => {
               className="form-input text-xs rounded-lg border-solid "
             />
           </span>
-          <div className="py-2 px-3 flex flex-col  col-span-2 bg-[#F3F2F3] rounded-lg md:px-5 md:py-4 sm:px-3 sm:py-2">
+          <div className="py-2 px-3 flex flex-col  col-span-2 bg-[#F3F2F3] rounded-lg ">
             <span className="flex mb-2">
-              <span className="basis-[45%] text-xs pl-1 sm:p-0  text-slate-500">
+              <span className="basis-[45%] text-xs pl-1   text-slate-500">
                 Item
               </span>
-              <span className="basis-[15%] text-xs pl-1 sm:p-0 sm:text-center text-slate-500">
+              <span className="basis-[15%] text-xs pl-1   text-slate-500">
                 Rate
               </span>
-              <span className="basis-[15%] text-xs pl-3 sm:p-0 sm:text-center text-slate-500">
+              <span className="basis-[15%] text-xs pl-3  text-slate-500">
                 Qty
               </span>
-              <span className="basis-[20%] text-xs pl-6 sm:p-0 sm:text-center text-slate-500">
+              <span className="basis-[20%] text-xs pl-6  text-slate-500">
                 Amount
               </span>
               <span className="basis-[5%] text-xs pl-1 text-slate-500"></span>
             </span>
-            <div className="">
+            {/* <div className="">
               {invoiceDetails.itemDetails.map((item, index) => (
                 <div className="flex flex-col mb-2" key={item.id}>
                   <span className="flex justify-center items-center gap-2">
@@ -247,7 +245,7 @@ const Form = ({ saveInvoiceData }) => {
                       onChange={(event) =>
                         handleItemDetailsChange(index, event)
                       }
-                      className="w-[292px] text-xs form-input rounded-lg border-solid md:basis-[45%] sm:w-[145px] "
+                      className="w-[292px] text-xs form-input rounded-lg border-solid  "
                     />
                     <input
                       type="number"
@@ -255,7 +253,7 @@ const Form = ({ saveInvoiceData }) => {
                       onChange={(event) =>
                         handleItemDetailsChange(index, event)
                       }
-                      className="w-[90.8px] text-xs form-input rounded-lg border-solid md:basis-[15%] sm:w-[46px]"
+                      className="w-[90.8px] text-xs form-input rounded-lg border-solid "
                     />
                     <input
                       type="number"
@@ -263,14 +261,14 @@ const Form = ({ saveInvoiceData }) => {
                       onChange={(event) =>
                         handleItemDetailsChange(index, event)
                       }
-                      className="w-[90.8px] text-xs  form-input rounded-lg border-solid md:basis-[15%] sm:w-[46px]"
+                      className="w-[90.8px] text-xs  form-input rounded-lg border-solid "
                     />
                     <input
                       type="number"
                       name="amount"
                       disabled
                       value={calculateAmount(item.qty, item.rate)}
-                      className="w-[95.84px] text-xs form-input rounded-lg border-solid md:basis-[20%] sm:w-[58px]"
+                      className="w-[95.84px] text-xs form-input rounded-lg border-solid "
                     />
                     {index !== 0 && (
                       <span
@@ -280,7 +278,7 @@ const Form = ({ saveInvoiceData }) => {
                         }
                       >
                         <svg
-                          className="h-[23px] w-[23px] md:h-[15px] md:w-[15px] md:basis-[5%] sm:h-[12px] sm:w-[12px]"
+                          className="h-[23px] w-[23px] "
                           fill="#6A6969"
                           viewBox="-3.5 0 19 19"
                           xmlns="http://www.w3.org/2000/svg"
@@ -303,7 +301,7 @@ const Form = ({ saveInvoiceData }) => {
                       <span className=" h-[25px] w-[25px]"></span>
                     )}
                   </span>
-                </div>
+                </div> 
               ))}
 
               <span className="flex flex-col items-center mt-6 text-xs text-[#2764F6]">
@@ -363,7 +361,7 @@ const Form = ({ saveInvoiceData }) => {
                 </span>
                 <span className="">Add item</span>
               </span>
-            </div>
+            </div>*/}
           </div>
           <div className="basis-[50%]">
             <span className="pt-2 flex gap-y-2 flex-col">

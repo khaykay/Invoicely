@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <>
       <Navbar />
-      <div className="flex">
+      <div className=" ">
         <Sidebar />
         <Body />
       </div>

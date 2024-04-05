@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import PDFFile from "./PDFFile";
 import Default from "./Layouts/Default";
 import GridRow from "./Layouts/GridRow";
 import GridColumn from "./Layouts/GridColumn";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { togglePreview } from "../Redux/previewSlice";
+import PreviewModal from "./Modals/PreviewModal";
 
 const Preview = ({ invoiceData }) => {
   const layout = useSelector((state) => state.layoutReducer.layout);
-
+  const previewModal = useSelector((state) => state.previewReducer.value);
+  const dispatch = useDispatch();
+  const handleClickPreview = () => {
+    dispatch(togglePreview());
+    console.log(previewModal);
+  };
   return (
-    <div className="md:flex md:justify-center ">
-      <div className="bg-[#F9FAFF]  py-6 px-8 text-xs md:text-[10px] md:px-6 md:w-[70%] sm:w-full ">
+    <div className=" lg:block">
+      <div className="bg-[#F9FAFF]  py-6 px-8 text-xs  ">
         <div className="">
           <h3 className="">Preview</h3>
         </div>
@@ -46,6 +53,10 @@ const Preview = ({ invoiceData }) => {
           </span> */}
         </div>
       </div>
+      {/* <div className="absolute right-0 bottom-0" onClick={handleClickPreview}>
+        preview button
+      </div>
+      <PreviewModal /> */}
     </div>
   );
 };
