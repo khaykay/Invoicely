@@ -14,8 +14,8 @@ const Sidebar = () => {
     setSelectedIcon(null);
   };
   return (
-    <>
-      <div className="inset-0 fixed mx-0 my-auto w-[80px] h-max ">
+    <div className="w-[80px] h-screen bg-white fixed flex ">
+      <aside className="inset-0 fixed mx-0 my-auto w-[80px] h-max ">
         <div className="   relative flex flex-col p-7 justify-around gap-5 h-max items-center bg-[#2764F6] rounded-r-[45px] ">
           <span
             className="flex flex-col items-center "
@@ -195,7 +195,7 @@ const Sidebar = () => {
         <div className="h-[80px] w-[80px] bg-white z-10 absolute rounded-[50%] bottom-[-80.1px]"></div>
         <div className="h-10 w-10 bg-[#2764F6] absolute top-[-39px]  "></div>
         <div className="h-10 w-10 bg-[#2764F6] absolute bottom-[-39px]"></div>
-      </div>
+      </aside>
 
       <SidebarModal
         isOpen={selectedIcon !== null}
@@ -207,7 +207,7 @@ const Sidebar = () => {
         {selectedIcon === "Color" && <Color />}
         {selectedIcon === "Background" && <p>Background Content Goes Here</p>}
       </SidebarModal>
-    </>
+    </div>
   );
 };
 

@@ -6,18 +6,12 @@ import GridRow from "./Layouts/GridRow";
 import GridColumn from "./Layouts/GridColumn";
 import { useDispatch, useSelector } from "react-redux";
 import { togglePreview } from "../Redux/previewSlice";
-import PreviewModal from "./Modals/PreviewModal";
 
 const Preview = ({ invoiceData }) => {
   const layout = useSelector((state) => state.layoutReducer.layout);
-  const previewModal = useSelector((state) => state.previewReducer.value);
-  const dispatch = useDispatch();
-  const handleClickPreview = () => {
-    dispatch(togglePreview());
-    console.log(previewModal);
-  };
+
   return (
-    <div className=" lg:block">
+    <div className="w-[100%]">
       <div className="bg-[#F9FAFF]  py-6 px-8 text-xs  ">
         <div className="">
           <h3 className="">Preview</h3>
@@ -42,21 +36,17 @@ const Preview = ({ invoiceData }) => {
                   Loading
                 </span>
               ) : (
-                <span className="bg-violet-50 text-violet-700 rounded-s-lg  px-2 py-[0.65rem] w-[5rem] text-center shadow-md font-semibold">
+                <span
+                  onClick={() => console.log("clicked me ooo")}
+                  className="bg-violet-50 text-violet-700 rounded-s-lg  px-2 py-[0.65rem] w-[5rem] text-center shadow-md font-semibold"
+                >
                   Download
                 </span>
               )
             }
           </PDFDownloadLink>
-          {/* <span className="bg-[#2764F6] text-white rounded-e-lg px-2 py-[0.65rem] w-[5rem] text-center shadow-md shadow-slate-600/50 font-semibold">
-            Print
-          </span> */}
         </div>
       </div>
-      {/* <div className="absolute right-0 bottom-0" onClick={handleClickPreview}>
-        preview button
-      </div>
-      <PreviewModal /> */}
     </div>
   );
 };

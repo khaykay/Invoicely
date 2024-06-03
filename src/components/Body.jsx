@@ -20,13 +20,19 @@ const Body = () => {
 
   return (
     <>
-      <div className=" flex flex-col lg:grid lg:grid-cols-[1.2fr_1fr] ml-[6rem] ">
+      <div className=" flex flex-col lg:grid lg:grid-cols-[1.2fr_1fr] lg:ml-[6rem] ">
         <Form saveInvoiceData={saveInvoiceData} />
-        <Preview invoiceData={invoiceData} />
-        <div className="absolute right-0 bottom-0" onClick={handleClickPreview}>
+        <div className="hidden lg:flex">
+          <Preview invoiceData={invoiceData} />
+        </div>
+
+        <div
+          className="lg:hidden fixed right-0 bottom-0"
+          onClick={handleClickPreview}
+        >
           preview button
         </div>
-        <PreviewModal />
+        <PreviewModal invoiceData={invoiceData} />
       </div>
     </>
   );
